@@ -1,0 +1,29 @@
+<ion-view view-title="旅游攻略">
+    <ion-nav-buttons>
+        <button class="button button-icon ion-navicon" menu-toggle></button>
+    </ion-nav-buttons>
+
+    <ion-content id="scenicsContent">
+        <div class="list card">
+            <div class="item item-divider"><p id="newsTitle">{{scenicsDetail.name}}</p></div>
+
+            <ion-slide-box  show-pager="true">
+                <ion-slide ng-repeat="url in scenicsDetail.images">
+                    <div class="list card">
+                        <div class="item item-image">
+                            <img ng-src="{{url}}" style="width: 100%">
+                        </div>
+                    </div>
+                </ion-slide>
+            </ion-slide-box>
+
+
+            <!--<div class="item item-image" ng-repeat="url in scenicsDetail.images">
+                <img ng-src="{{url}}" style="width: 100%">
+            </div>-->
+            <div class="item item-divider" ng-repeat="content in scenicsDetail.describe">
+                <p id="newsContent">{{content}}</p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

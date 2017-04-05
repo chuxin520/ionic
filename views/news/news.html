@@ -1,0 +1,31 @@
+<ion-view view-title="新闻资讯">
+    <ion-nav-buttons>
+        <button class="button button-icon ion-navicon" menu-toggle></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="list card" ng-show="newsFlag">
+            <div class="item  item-divider">
+                <p id="detailTitle">{{newDetail.title}}</p>
+            </div>
+            <div class="item  item-image" ng-repeat="img in newDetail.images">
+                <img ng-src="{{img.url}}">
+            </div>
+            <div class="item  item-divider" ng-repeat="content in newDetail.content">
+                <p id="detailContent">{{content}}</p>
+            </div>
+        </div>
+        <div class="list card" ng-repeat="item in newsArr" ng-hide="false">
+            <div class="item  item-divider">
+                <p id="newsTitle">{{item.title}}</p>
+            </div>
+            <div class="item  item-image" ng-repeat="img in item.images">
+                <img ng-src="{{img.url}}">
+            </div>
+            <div class="item  item-divider" ng-repeat="content in item.content">
+                <p id="newsContent">{{content}}</p>
+            </div>
+        </div>
+    </ion-content>
+    <ion-infinite-scroll on-infinite="getNews()" ng-if="total>page" immediate-check="false">
+    </ion-infinite-scroll>
+</ion-view>

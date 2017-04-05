@@ -1,0 +1,38 @@
+<ion-view view-title="欢迎光临" style="text-align: center;height: 100%  " id="tourCon">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear" ui-sref="home" ng-if="isShow">进入</button>
+    </ion-nav-buttons>
+    <ion-slide-box on-slide-changed="checkShow()">
+        <ion-slide>
+            <div class="centerBox" style="line-height: 100px; text-align:center;">
+                <i class="icon icon-slide icon ion-map" style="font-size: 100px"></i>
+                <span style="display: inline-block; padding-bottom: 45px">
+                <i class="ion-ios-arrow-left"></i>
+                <i class="ion-ios-arrow-left"></i>
+                <i class="ion-ios-arrow-left"></i>
+                <i class="ion-ios-arrow-right"></i>
+                <i class="ion-ios-arrow-right"></i>
+                <i class="ion-ios-arrow-right"></i>
+                </span>
+                <i class="icon icon-slide ion-android-globe" style="font-size: 100px"></i>
+                <p>旅游攻略 新闻资讯 滑动切换</p>
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <div class="centerBox" style="line-height: 100px; text-align:center;">
+                <i class="icon icon-slide ion-ios-sunny" style="font-size: 150px"></i>
+                <h3>天气预报</h3>
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <div class="centerBox" style="line-height: 100px; text-align:center;">
+                <i class="icon icon-slide ion-android-bulb" style="font-size: 150px"></i>
+                <h3>帮助引导页</h3>
+                <a class="button button-positive"  ui-sref="home" >开始使用</a>
+            </div>
+        </ion-slide>
+    </ion-slide-box>
+</ion-view>
+
+
+

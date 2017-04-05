@@ -1,0 +1,130 @@
+<ion-view view-title="主页" hide-back-button="true">
+
+    <ion-nav-buttons>
+        <button class="button button-icon ion-navicon" menu-toggle></button>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+
+
+        <ion-slide-box on-slide-changed="checkShow()" show-pager="false">
+            <ion-slide>
+                <a class="item item-icon-left">
+                    <i class="icon ion-map calm"></i>旅游攻略<span style="float: right">新闻 <i class="ion-ios-arrow-left"></i><i class="ion-ios-arrow-left"></i></span>
+                </a>
+                <a href="#/scenics">
+                    <div class="list card" ng-repeat="item in scenics.scenics"  ng-click="showDetail(item)" >
+                        <div class="item item-divider"><p id="scenicsTitle">{{item.name}}</p></div>
+                        <div class="item item-image" ng-repeat="url in item.images | limitTo:1"><img ng-src="{{url}}"
+                                                                                                     style="width: 100%">
+                        </div>
+                    </div>
+                </a>
+            </ion-slide>
+            <ion-slide>
+
+                <a class="item item-icon-left">
+                    <i class="icon ion-android-globe calm"></i>新闻资讯
+                </a>
+                <a href="#/news" >
+                <div class="list card" ng-repeat="item in news.news | limitTo:8" ng-click="showNews(item)">
+                    <div class="item item-divider"><p id="newsTitle">{{item.title}}</p></div>
+                    <div class="item item-image" ng-repeat="image in item.images | limitTo:1"><img
+                            ng-src="{{image.url}}" style="width: 100%">
+                    </div>
+                </div>
+                </a>
+            </ion-slide>
+            <!--      <ion-slide>
+                      <a class="item item-icon-left" href="#/weather">
+                          <i class="icon ion-ios-sunny calm"></i>{{weather.data.city}}天气
+                      </a>
+                      <div style="text-align: center" class="list card" ng-repeat="weather in forecast">
+                          <div class="item  item-divider">{{weather.date}}</div>
+                          <div class="item" href="#/news">
+                              <img ng-src="{{weatherMap[weather.type]}}" alt="{{weather.type}}">
+                              <h1>{{weather.type}}</h1>
+                              <p>{{weather.high}}-{{weather.low}}</p>
+                              <p>{{weather.fengli}} {{weather.fengxiang}}</p>
+                          </div>
+                      </div>
+                  </ion-slide>-->
+        </ion-slide-box>
+
+        <!-- <div class="list card">
+             <div class="item">
+                 <a class="item item-icon-left" href="#/scenics">
+                     <i class="icon ion-map calm"></i>旅游攻略
+                 </a>
+                 <a href="#/scenics">
+                 <ion-slide-box style="text-align:center;" does-continue="true" auto-play="false" slide-interval="1500" show-pager="true">
+                     <ion-slide>
+                         <h2>颐和园</h2>
+                         <div class="box"><img src="images/scenicsPic1_1.jpg" style="width: 100%;height: 100%"></div>
+                     </ion-slide>
+                     <ion-slide>
+                         <h2>长城</h2>
+                         <div class="box"><img src="images/scenicsPic2.jpg" style="width: 100%;height: 100%"></div>
+                     </ion-slide>
+                     <ion-slide>
+                         <h2>故宫</h2>
+                         <div class="box"><img src="images/scenicsPic3_1.jpg" style="width: 100%;height: 100%"></div>
+                     </ion-slide>
+                     <ion-slide>
+                         <h2>天安门</h2>
+                         <div class="box"><img src="images/scenicsPic4_1.jpg" style="width: 100%;height: 100%"></div>
+                     </ion-slide>
+                     <ion-slide>
+                         <h2>北海公园</h2>
+                         <div class="box"><img src="images/scenicsPic5_1.jpg" style="width: 100%"></div>
+                     </ion-slide>
+                     <ion-slide>
+                         <h2>什刹海</h2>
+                         <div class="box"><img src="images/scenicsPic6_1.jpg" style="width: 100%"></div>
+                     </ion-slide>
+                     <ion-slide>
+                         <h2>恭王府花园</h2>
+                         <div class="box"><img src="images/scenicsPic7_1.jpg" style="width: 100%"></div>
+                     </ion-slide>
+                     <ion-slide>
+                         <h2>明十三陵</h2>
+                         <div class="box"><img src="images/scenicsPic8_1.jpg" style="width: 100%"></div>
+                     </ion-slide>
+                 </ion-slide-box>
+                 </a>
+             </div>
+         </div>
+         <div class="list card">
+             <div class="item" id="homeNews">
+                 <a class="item item-icon-left" href="#/news">
+                     <i class="icon ion-android-globe calm"></i>新闻资讯
+                 </a>
+                 <a class="item item-thumbnail-left" href="#/news">
+                     <img src="images/newsPic1.jpg" alt="美两名警察涉嫌枪杀非洲裔男子 当地数百人示威">
+                     <h2>国际新闻</h2>
+                     <br>
+                     <p>美两名警察涉嫌枪杀非洲裔男子 当地数百人示威</p>
+                 </a>
+             </div>
+         </div>
+         <div class="list card">
+             <div class="item">
+                 <a class="item item-icon-left" href="#/weather">
+                     <i class="icon ion-ios-sunny calm"></i>{{weather.data.city}}天气
+                 </a>
+
+                 <a class="item item-thumbnail-left " href="#/weather">
+                     <img ng-src="{{weatherMap[forecast[0].type]}}" alt="{{forecast[0].type}}">
+                     <h2>{{forecast[0].type}}</h2>
+                     <h2>{{forecast[0].date}}</h2>
+                     <p>{{forecast[0].high}}-{{forecast[0].low}}</p>
+                 </a>
+             </div>
+         </div>-->
+
+
+    </ion-content>
+</ion-view>
+
+
+
+

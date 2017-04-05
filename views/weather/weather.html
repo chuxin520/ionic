@@ -1,0 +1,20 @@
+<ion-view view-title="天气预报">
+    <ion-nav-buttons>
+        <button class="button button-icon ion-navicon" menu-toggle></button>
+
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="list card">
+            <div class="item  item-divider">城市设置：<select id="province"></select><select id="city"></select></div>
+        </div>
+        <div style="text-align: center" class="list card" ng-repeat="weather in forecast">
+            <div class="item  item-divider">{{weather.date}}</div>
+            <div class="item" href="#/news">
+                <img ng-src="{{weatherMap[weather.type]}}" alt="{{weather.type}}">
+                <h1>{{weather.type}}</h1>
+                <p>{{weather.high}}-{{weather.low}}</p>
+                <p>{{weather.fengli}} {{weather.fengxiang}}</p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
